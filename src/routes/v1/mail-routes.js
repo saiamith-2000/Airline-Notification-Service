@@ -1,10 +1,11 @@
 const express=require('express');
 
 const { EmailController }=require('../../controllers');
+const { EmailService } = require('../../services');
 
 const router=express.Router();
 
-router.post('/send',EmailController.sendEmail);
+router.post('/send',EmailService.sendEmail);
 router.post('/ticket',EmailController.createTicket);
 
 
