@@ -46,3 +46,23 @@ Lets take a look inside the `src` folder
  ```
  npm run dev
  ```
+Docker setup:
+ ```
+
+ docker build -t notification-service .
+
+ ```
+ ```
+
+ docker network create micro-net-notification
+
+ ```
+ ```
+ docker volume create notification-service-modules 
+
+ ```
+ ```
+
+ docker run -it --init -p 3002:3002 --name=notification-service --network micro-net-notification -v "$(pwd)":/developer/nodejs/notification-service -v notification-service-node-modules:/developer/nodejs/notification-service/node_modules notification-service:latest 
+
+ ```
